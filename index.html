@@ -8,9 +8,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- 
-      FIXED: 
-      Updated the script to load the correct Lucide icon library.
-      This will fix the "lucide is not defined" error.
+      تم التعديل: 
+      تم تحديث الرابط لتحميل مكتبة الأيقونات الصحيحة.
+      هذا سيصلح خطأ "lucide is not defined".
     -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
@@ -78,15 +78,16 @@
         <section id="home" class="min-h-screen flex items-center justify-center text-center pt-20" style="background: radial-gradient(circle, rgba(17, 24, 39, 0.8) 0%, rgba(15, 23, 42, 1) 70%), url('https://placehold.co/1920x1080/0f172a/1d4ed8') no-repeat center center/cover;">
             
             <!-- 
-              EDITED:
-              Content is now inside a semi-transparent white card for a professional look.
+              تم التعديل:
+              تم تجميع المحتوى داخل "بطاقة" بيضاء شبه شفافة لإعطاء مظهر احترافي.
+              تم تغيير ألوان الخطوط لتناسب الخلفية البيضاء.
             -->
             <div class="container mx-auto px-6">
                 <div class="max-w-2xl mx-auto bg-white/95 backdrop-blur-md rounded-lg shadow-2xl p-8 md:p-12">
                     
                     <!-- 
-                      FIXED:
-                      Your correct personal photo URL is placed here.
+                      تم الإصلاح:
+                      تم وضع رابط صورتك الصحيح.
                     -->
                     <img src="https://i.imgur.com/wnkORxT.jpg" 
                          alt="Profile Picture of Mohammed Aldhani" 
@@ -170,8 +171,8 @@
 
         <!-- Projects Section -->
         <!-- 
-          DELETED: 
-          The "My Projects" section was removed per your request.
+          تم الحذف: 
+          تم حذف قسم "My Projects" بالكامل بناءً على طلبك.
         -->
 
         <!-- Contact Section -->
@@ -213,16 +214,17 @@
                 <!-- Social Links -->
                 <div class="flex justify-center space-x-8 mt-16">
                     
-                    <!-- EDITED: Added your correct LinkedIn URL and target="_blank" -->
+                    <!-- EDITED: Added your correct LinkedIn URL -->
                     <a href="https://www.linkedin.com/in/%D9%85%D8%AD%D9%85%D8%AF-%D8%A7%D9%84%D8%B6%D8%A7%D9%86%D9%8A-92455b32b/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors" title="LinkedIn">
                         <i data-lucide="linkedin" class="w-8 h-8"></i>
                     </a>
                     
-                    <!-- EDITED: Added your correct GitHub URL and target="_blank" -->
+                    <!-- EDITED: Added your correct GitHub URL -->
                     <a href="https://github.com/mohammed-aldhani" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors" title="GitHub">
                         <i data-lucide="github" class="w-8 h-8"></i>
                     </a>
-
+                    <!-- Email: Text update and icon removal -->
+                    <!-- Phone: Text update and icon removal -->
                 </div>
                 
             </div>
@@ -235,20 +237,20 @@
         <div class="container mx-auto px-6 space-y-4">
             
             <!-- 
-                EDITED: 
-                1. Set direction to LTR (left-to-right).
-                2. Added "sm:mr-6" (margin-right) to the phone element for spacing.
-                3. Layout is: [Icon] [Text] 
+                تم التعديل: 
+                1. جعل الترتيب LTR (يسار لليمين).
+                2. إضافة "sm:mr-6" (margin-right) على عنصر الهاتف لإضافة مسافة.
+                3. الترتيب هو: [Icon] [Text] 
             -->
             <div class="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 text-slate-400 font-arabic">
                 
-                <!-- Phone: [Icon] [Text] -->
-                <span class="flex items-center sm:mr-6"> <!-- Added "sm:mr-6" here for spacing -->
+                <!-- الهاتف: [Icon] [Text] -->
+                <span class="flex items-center sm:mr-6"> <!-- تمت إضافة "sm:mr-6" هنا للفصل -->
                     <i data-lucide="phone" class="w-5 h-5 inline-block mr-2"></i> <!-- mr-2 = margin-right -->
                     <a href="tel:0508957380" class="hover:text-white transition-colors" dir="ltr">050 895 7380</a>
                 </span>
                 
-                <!-- Email: [Icon] [Text] -->
+                <!-- الايميل: [Icon] [Text] -->
                 <span class="flex items-center">
                     <i data-lucide="mail" class="w-5 h-5 inline-block mr-2"></i> <!-- mr-2 = margin-right -->
                     <a href="mailto:mokolo.boba@gmail.com" class="hover:text-white transition-colors">mokolo.boba@gmail.com</a>
@@ -283,10 +285,7 @@
 
             // Close menu when a link is clicked
             mobileMenu.querySelectorAll('a').forEach(link => {
-                //
-                // *** THIS WAS THE ERROR. I REMOVED THE "F" ***
-                //
-                link.addEventListener('click', () => { 
+                link.addEventListener('click', () => {
                     mobileMenu.classList.add('hidden');
                     menuButton.querySelector('i').setAttribute('data-lucide', 'menu');
                     menuButton.setAttribute('aria-label', 'Open Menu');
@@ -337,5 +336,4 @@
         });
     </script>
 </body>
-</html>
 </html>
