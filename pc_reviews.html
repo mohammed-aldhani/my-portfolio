@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>توصيات محمد لأفضل قطع الكمبيوتر</title>
+    
+    <!-- تحميل Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- تحميل مكتبة الأيقونات Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- تحميل خط 'Cairo' للغة العربية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* تطبيق الخط العربي على كامل الصفحة */
+        body {
+            font-family: 'Cairo', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* لضمان محاذاة الأيقونات بشكل صحيح مع النص العربي */
+        [data-lucide] {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 0.5rem; /* إضافة هامش على يسار الأيقونة */
+        }
+
+        /* تصميم مؤشر التحميل */
+        .loader {
+            border: 4px solid #f3f3f3; /* Light grey */
+            border-top: 4px solid #3b82f6; /* Blue */
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white">
+
+    <!-- Header - عنوان الصفحة -->
+    <header class="text-center py-12 md:py-16 border-b border-slate-700">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">
+                توصياتي لأفضل قطع الكمبيوتر
+            </h1>
+            <p class="text-xl text-slate-400">
+                قائمتي الشخصية لأفضل 5 معالجات وأفضل 5 كروت شاشة.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content - شبكة القطع -->
+    <main class="container mx-auto px-6 py-12 md:py-20">
+        
+        <!-- قسم المعالجات -->
+        <section id="cpus" class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 border-b border-slate-700 pb-4">
+                أفضل 5 معالجات (CPUs)
+                <i data-lucide="cpu" class="w-10 h-10 text-blue-400"></i>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- البطاقة 1 -->
+                <div class="bg-slate-800 rounded-lg shadow-xl p-8 transform transition duration-300 hover:scale-105 hover:shadow-blue-500/20">
+                    <h3 class="text-2xl font-bold text-white mb-3">1. R7 7800X3D</h3>
+                    <p class="text-slate-300 leading-relaxed">
+                        <span class="font-bold text-white block mb-2">رأيي الشخصي:</span>
+                        يتميز هذا المعالج بأداء فائق في الألعاب وثاني اقوى المعالجات بعد أخيه الكبير ويتوفر بسعر جيد في علي اكسبريس.
+                    </p>
+                    <button class="generate-summary-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full text-sm transition duration-300">
+                        ✨ ملخص بالذكاء الاصطناعي
+                    </button>
+                    <div class="summary-output text-slate-400 mt-4 text-sm" style="display: none;"></div>
+                </div>
+                
+                <!-- البطاقة 2 -->
+                <div class="bg-slate-800 rounded-lg shadow-xl p-8 transform transition duration-300 hover:scale-105 hover:shadow-blue-500/20">
+                    <h3 class="text-2xl font-bold text-white mb-3">2. I9 13900k</h3>
+                    <p class="text-slate-300 leading-relaxed">
+                        <span class="font-bold text-white block mb-2">رأيي الشخصي:</span>
+                        السبب الوحيد الذي جعلني اضعه في المرتبة الثانية هو انه يستهلك الكثير من الطاقة وحرارته عالية غير ذلك هو الأفضل بكل شي تقريبا.
+                    </p>
+                    <button class="generate-summary-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full text-sm transition duration-300">
+                        ✨ ملخص بالذكاء الاصطناعي
+                    </button>
+                    <div class="summary-output text-slate-400 mt-4 text-sm" style="display: none;"></div>
+                </div>
+                
+                <!-- البطاقة 3 -->
+                <div class="bg-slate-800 rounded-lg shadow-xl p-8 transform transition duration-300 hover:scale-105 hover:shadow-blue-500/20">
+                    <h3 class="text-2xl font-bold text-white mb-3">3. R5 7600</h3>
+                    <p class="text-slate-300 leading-relaxed">
+                        <span class="font-bold text-white block mb-2">رأيي الشخصي:</span>
+                        لن ننسى محبوب الجماهير فهو يجمع بين الأداء والسعر المنخفض واستهلاك الطاقة الممتاز.
+                    </p>
+                    <button class="generate-summary-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full text-sm transition duration-300">
+                        ✨ ملخص بالذكاء الاصطناعي
+                    </button>
+                    <div class="summary-output text-slate-400 mt-4 text-sm" style="display: none;"></div>
+                </div>
+
+                <!-- البطاقة 4 -->
+                <div class="bg-slate-800 rounded-lg shadow-xl p-8 transform transition duration-300 hover:scale-105 hover:shadow-blue-500/20">
+                    <h3 class="text-2xl font-bold text-white mb-3">4. i5 12400f</h3>
+                    <p class="text-slate-300 leading-relaxed">
+                        <span class="font-bold text-white block mb-2">رأيي الشخصي:</span>
+                        هذا المعالج حرفيا تجده مستعمل ب 150 ريال ويقدم أداء ممتاز مع حرارة منخفضة جدا.
+                    </p>
+                    <button class="generate-summary-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full text-sm transition duration-300">
+                        ✨ ملخص بالذكاء الاصطناعي
+                    </button>
+                    <div class="summary-output text-slate-400 mt-4 text-sm" style="display: none;"></div>
+                </div>
+
+                <!-- البطاقة 5 (ساخرة) -->
+                <div class="bg-slate-800 rounded-lg shadow-xl p-8 transform transition duration-300 hover:scale-105 hover:shadow-blue-500/20">
+                    <h3 class="text-2xl font-bold text-white mb-3">5. معالج i2 الجيل الاول</h3>
+                    <p class="text-slate-300 leading-relaxed">
+                        <span class="font-bold text-white block mb-2">رأيي الشخصي:</span>
+                        انه افضل معالج والاب الروحي للمعالجات ولقد وضعته عشان اكون محنك زي سنكرة.
+                    </p>
+                    <button class="generate-summary-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full text-sm transition duration-300">
+                        ✨ ملخص بالذكاء الاصطناعي
+                    </button>
+                    <div class="summary-output text-slate-400 mt-4 text-sm" style="display: none;"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- قسم كروت الشاشة -->
+        <section id="gpus">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 border-b border-slate-700 pb-4">
+                أفضل 5 كروت شاشة (GPUs)
+                <i data-lucide="circuit-board" class="w-10 h-10 text-green-400"></i>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- البطاقة 1 -->
+                <div class="bg-slate-800 rounded-lg shadow-xl p-8 transform transition duration-300 hover:scale-105 hover:shadow-green-500/20">
+                    <h3 class="text-2xl font-bold text-white mb-3">1. RTX 3080 "ملك الكروت"</h3>
+                    <p class="text-slate-300 leading-relaxed">
+                        <span class="font-bold text-white block mb-2">رأيي الشخصي:</span>
+                        كرت اسطوري يشغل اقوى الألعاب على جودات مختلفة وتجده مستعمل ب 1400 ريال ويحتوي على mmemory bus و Bandwith عالية.
+                    </p>
+                    <button class="generate-summary-btn mt-4 bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full text-sm transition duration-300">
+                        ✨ ملخص بالذكاء الاصطناعي
+                    </button>
+                    <div class="summary-output text-slate-400 mt-4 text-sm" style="display: none;"></div>
+                </div>
+                
+                <!-- البطاقة 2 -->
+                <div class="bg-slate-800 rounded-lg shadow-xl p-8 transform transition duration-300 hover:scale-105 hover:shadow-green-500/20">
+                    <h3 class="text-2xl font-bold text-white mb-3">2. RTX 4070 Super</h3>
+                    <p class="text-slate-300 leading-relaxed">
+                        <span class="font-bold text-white block mb-2">رأيي الشخصي:</span>
+                        رغم انني لا افضله ولكن لايوجد سبب يمنعني من وضعه فهو متفوق بكل شي ويحتوي على احدث التقنيات بسعر جيد.
+                    </p>
+                    <button class="generate-summary-btn mt-4 bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full text-sm transition duration-300">
+                        ✨ ملخص بالذكاء الاصطناعي
+                    </button>
+                    <div class="summary-output text-slate-400 mt-4 text-sm" style="display: none;"></div>
+                </div>
+                
+                <!-- البطاقة 3 -->
+                <div class="bg-slate-800 rounded-lg shadow-xl p-8 transform transition duration-300 hover:scale-105 hover:shadow-green-500/20">
+                    <h3 class="text-2xl font-bold text-white mb-3">3. RX 9070 XT</h3>
+                    <p class="text-slate-300 leading-relaxed">
+                        <span class="font-bold text-white block mb-2">رأيي الشخصي:</span>
+                        كرت AMD الجديد لقد تفوق على منافسه ال 5070 ويقدم اقوى التقنيات ب دعم قوي من شركة AMD.
+                    </p>
+                    <button class="generate-summary-btn mt-4 bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full text-sm transition duration-300">
+                        ✨ ملخص بالذكاء الاصطناعي
+                    </button>
+                    <div class="summary-output text-slate-400 mt-4 text-sm" style="display: none;"></div>
+                </div>
+
+                <!-- البطاقة 4 -->
+                <div class="bg-slate-800 rounded-lg shadow-xl p-8 transform transition duration-300 hover:scale-105 hover:shadow-green-500/20">
+                    <h3 class="text-2xl font-bold text-white mb-3">4. RTX 4090</h3>
+                    <p class="text-slate-300 leading-relaxed">
+                        <span class="font-bold text-white block mb-2">رأيي الشخصي:</span>
+                        أتوقع لاداعي لان نذكر التفاصيل ولكن هذا الكرت تفوق على الكل بفارق شاسع سواء للألعاب او انتاج المحتوى.
+                    </p>
+                    <button class="generate-summary-btn mt-4 bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full text-sm transition duration-300">
+                        ✨ ملخص بالذكاء الاصطناعي
+                    </button>
+                    <div class="summary-output text-slate-400 mt-4 text-sm" style="display: none;"></div>
+                </div>
+
+                <!-- البطاقة 5 (ساخرة) -->
+                <div class="bg-slate-800 rounded-lg shadow-xl p-8 transform transition duration-300 hover:scale-105 hover:shadow-green-500/20">
+                    <h3 class="text-2xl font-bold text-white mb-3">5. الكرت المدمج (Integrated GPU)</h3>
+                    <p class="text-slate-300 leading-relaxed">
+                        <span class="font-bold text-white block mb-2">رأيي الشخصي:</span>
+                        الخيار الأفضل لمحبي التحدي. هل يمكنك تشغيل لعبة حديثة؟ لا. هل يمكنك فتح ملف وورد؟ نعم. أداء أسطوري... في استعراض سطح المكتب.
+                    </p>
+                    <button class="generate-summary-btn mt-4 bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full text-sm transition duration-300">
+                        ✨ ملخص بالذكاء الاصطناعي
+                    </button>
+                    <div class="summary-output text-slate-400 mt-4 text-sm" style="display: none;"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- قسم مولد التجميعات AI -->
+        <section id="ai-builder" class="bg-slate-800 rounded-lg shadow-xl p-8 md:p-12 my-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
+                ✨ مولد التجميعات (مدعوم بالذكاء الاصطناعي)
+            </h2>
+            <p class="text-lg text-slate-300 mb-8 text-center max-w-2xl mx-auto">
+                أخبرني بميزانيتك واستخدامك، وسأقوم بإنشاء تجميعة كمبيوتر كاملة لك بناءً على توصياتي والقطع المتوفرة.
+            </p>
+
+            <form id="build-form" class="max-w-xl mx-auto space-y-4">
+                <div>
+                    <label for="budget-input" class="block text-sm font-medium text-slate-200 mb-1">الميزانية (مثال: 1500 دولار أو 5000 ريال)</label>
+                    <input type="text" id="budget-input" required class="w-full rounded-md p-3 bg-slate-700 border border-slate-600 text-white focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                </div>
+                <div>
+                    <label for="usage-input" class="block text-sm font-medium text-slate-200 mb-1">الاستخدام الأساسي (مثال: ألعاب 1440p وبث مباشر)</label>
+                    <textarea id="usage-input" rows="3" required class="w-full rounded-md p-3 bg-slate-700 border border-slate-600 text-white focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
+                </div>
+                <div class="text-center pt-4">
+                    <button type="submit" id="build-submit-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-12 rounded-full text-lg transition duration-300 transform hover:scale-105">
+                        أنشئ التجميعة
+                    </button>
+                </div>
+            </form>
+
+            <div id="build-output" class="mt-8 bg-slate-900 rounded-lg p-6 text-right" style="display: none;">
+                <!-- سيتم وضع مؤشر التحميل والنتيجة هنا -->
+            </div>
+
+            <!-- زر وسعر حراج -->
+            <div id="haraj-section" class="text-center mt-6" style="display: none;">
+                <button type="button" id="haraj-price-btn" class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-8 rounded-full text-md transition duration-300">
+                    <i data-lucide="tag" class="w-5 h-5" style="margin-left: 0.5rem; margin-right: -0.25rem;"></i>
+                    كم سعر هذه التجميعة (مستعمل) في حراج؟
+                </button>
+                <div id="haraj-output" class="mt-4 bg-slate-700 rounded-lg p-4 text-right" style="display: none;">
+                    <!-- سيتم وضع سعر حراج هنا -->
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-8 text-center mt-12">
+        <div class="container mx-auto px-6">
+            <p class="text-slate-400">
+                &copy; 2025 - جميع الآراء المذكورة هي آراء شخصية لمحمد الضاني.
+            </p>
+            <!-- رابط العودة للموقع الرئيسي -->
+            <a href="https://mohammed-aldhani.github.io/my-portfolio" 
+               class="text-blue-400 hover:text-blue-300 transition-colors mt-4 inline-block">
+                &larr; العودة إلى ملفي الشخصي
+            </a>
+        </div>
+    </footer>
+
+    <!-- تفعيل الأيقونات والكود البرمجي -->
+    <script>
+        lucide.createIcons();
+
+        /* --- كود Gemini API --- */
+        
+        const apiKey = "";
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+
+        // "عقل" محمد الضاني
+        const MOHAMMEDS_BRAIN = `
+        أنت مساعد خبير في بناء أجهزة الكمبيوتر، وتعمل كمساعد لمحمد الضاني.
+        مهمتك هي الرد على طلبات المستخدمين لإنشاء تجميعات كمبيوتر، ولكن يجب أن تتبع "قواعد" محمد وخبرته الشخصية أولاً وقبل كل شيء.
+        
+        ***قواعد وخبرة محمد الضاني (يجب اتباعها):***
+        
+        1.  **التوصيات الأساسية:** قائمة القطع المفضلة لمحمد هي: ${Array.from(document.querySelectorAll('section h3')).map(h => h.textContent.split('.').pop().trim()).join(', ')}. حاول استخدامها دائماً إذا كانت مناسبة.
+        
+        2.  **قاعدة الميزانية المنخفضة (1500-2000 ريال):**
+            * ركز بشدة على السوق المستعمل (حراج، وغيره).
+            * المعالج: i5 12400f (رخيص جداً مستعمل، حوالي 200 ريال).
+            * اللوحة الأم: b760 رخيصة كافية (المعالج لا يستهلك طاقة).
+            * كرت الشاشة: ابحث عن كرت مستعمل جيد مثل RTX 3060 (حوالي 700 ريال).
+            * الخلاصة: وفر المال في كل القطع (الكيس، التخزين) لتضع الميزانية الأكبر في كرت الشاشة المستعمل. لا تشغل بالك بالجديد.
+
+        3.  **قاعدة الميزانية المتوسطة (4000-5000 ريال):**
+            * المعالج: اذهب مع AMD (أداء ممتاز مقابل السعر). خذ R5 7600 أو R7 7700 (أو R7 7800X3D إذا كان عليه عرض).
+            * اللوحة الأم: b650 متوسطة كافية (هذه المعالجات لا تستهلك طاقة كبيرة).
+            * كرت الشاشة: التجميعة ستكون مزيجاً بين جديد ومستعمل. ابحث عن RTX 3080 مستعمل أو 4070 Super جديد حسب المتبقي من الميزانية.
+
+        4.  **قاعدة الميزانية المفتوحة (تحذير مهم):**
+            * لا تشتري أغلى القطع فقط لأنك تملك المال. ركز على "احتياجك الفعلي".
+            * مثال 1: معالج R7 7800X3D لا يحتاج إلى أغلى لوحة أم في السوق.
+            * مثال 2: لا تشتري كرت 4090 إذا كنت تلعب ألعاباً بسيطة (مثل لعبة غولف). تجربة كرت 4080 لن تفرق معك.
+            * الخلاصة: اختر القطع بناءً على "الهدف" وليس "السعر".
+        
+        5.  **قاعدة جهاز الدراسة/المكتب (لا ألعاب):**
+            * جهاز بسيط جداً كافي.
+            * المعالج: i5 جيل سابع أو ثامن بكرت مدمج سيفي بالغرض.
+            * لا مانع من إضافة كرت خارجي رخيص جداً (مثل 1030) إذا أراد، لكن الكرت المدمج كافي.
+
+        6.  **قاعدة جهاز الألعاب (1080p):**
+            * هذه الفئة تضغط على المعالج، لذا نحتاج معالج مقتدر.
+            * المعالج: i5 12400f أو R5 5600x.
+            * كرت الشاشة: (مزيج مستعمل أو جديد) ابحث عن RTX 3060, RX 6600, Intel b580, RTX 4060, أو RX 6700 XT.
+
+        7.  **قاعدة جهاز صناعة المحتوى (مونتاج/تصميم):**
+            * كرت الشاشة: اذهب مع NVIDIA (ممتازة لصناعة المحتوى). مثال: RTX 4070 Super أو RTX 3080 أو حسب الميزانية.
+            * المعالج (Intel): i7 14700k, i9 13900k/14900k, أو معالجات Ultra الجديدة.
+            * المعالج (AMD): R9 7950X أو R9 9950X.
+            * الرامات: 32GB أو 64GB (بسرعة وتوقيت ممتاز).
+
+        8.  **قواعد اللوحات الأم (Motherboards):**
+            * لمعالج i5 12400f، لوحة b760 رخيصة كافية.
+            * لمعالجات AMD (مثل R5 7600/R7 7700)، لوحة b650 متوسطة كافية.
+            * لمعالج R7 7800X3D، لا تحتاج أغلى لوحة أم.
+
+        9.  **تحذيرات (RAM و PSU):**
+            * **الرامات (RAM):** تأكد أن سرعة الرامات (مثل 7000MHz) مدعومة من معالجك. لا تشتري رامات أسرع مما يدعمه المعالج (مثل 5200MHz) لأن هذا يسبب أخطاء.
+            * **مزود الطاقة (PSU):** لا تسترخص! اذهب مع شركات معروفة (مثل XPG, Corsair). خذ طاقة كافية (مثلاً 850 واط) ويفضل أن تكون PLUS GOLD أو أعلى.
+
+        10. **نصائح ساخرة:** "تذكر دائماً أن معالج i2 هو الأب الروحي للمعالجات".
+
+        11. **قواعد أسعار "حراج" (السوق المستعمل):**
+            * **ملاحظة هامة:** هذه الأسعار للمستعمل فقط (موقع حراج). لا تستخدمها عند إنشاء التجميعة الأساسية، استخدمها *فقط* عند الرد على طلب "حساب سعر التجميعة المستعملة".
+            * أنت خبير في أسعار القطع المستعملة في السعودية (موقع حراج). هذه هي قائمة أسعارك التقديرية:
+
+            **المعالجات (مستعمل):**
+            * R5 7600: 450-600 ريال
+            * R5 5600: 300-450 ريال
+            * R7 7700: 500-800 ريال
+            * R7 7800X3D: 1000-1300 ريال
+            * i5 12400F: 150-250 ريال
+            * i7 14700K: 850-1200 ريال
+            * i5 14600K: 700-900 ريال
+
+            **كروت الشاشة (مستعمل):**
+            * RTX 3080: 1350-1800 ريال
+            * RTX 4070 SUPER: 1800-2200 ريال
+            * RTX 3070: 750-1000 ريال
+            * RTX 3060: 600-800 ريال
+            * RTX 4060: 700-1000 ريال
+            * RTX 4060 TI: 1000 ريال
+            * RTX 4070: 1500-1700 ريال
+            * RTX 4080: 3000-3200 ريال
+            * RTX 5070: 2100-2200 ريال
+            * RX 6700 XT: 800-1200 ريال
+            * RX 7700 XT: 1200-1600 ريال
+            * RX 7800 XT: 1600-2200 ريال
+            * RX 9070 XT: 2800 ريال
+            * RTX 5070 TI: 3000-3300 ريال
+            * RTX 4070 TI: 2200-2500 ريال
+            * RTX 4070 TI SUPER: 2500-3000 ريال
+            * RTX 2060: 400-500 ريال
+            * RTX 2070: 600 ريال
+            * RX 6600 XT: 550-650 ريال
+
+            **قطع أخرى (مستعمل):**
+            * مذربورد B760 (متوسط): 350-450 ريال
+            * مذربورد B760 (ممتاز): 500 ريال
+            * مذربورد Z790: 500-800 ريال
+            * مذربورد B650 (متوسط): 450 ريال
+            * مذربورد B650 (ممتاز): 500-700 ريال
+            * مذربورد X670: 650-1000 ريال
+            * تخزين 1TB M.2 (مستعمل): 150-170 ريال
+            * رامات 32GB DDR5 (مستعمل): 300 ريال
+            * رامات 16GB DDR4 (مستعمل): 100 ريال
+            * كيس (Case): يمكن إيجاد أنواع ممتازة مستعملة بـ 200 ريال.
+            
+            **تحذير: مزود الطاقة (PSU) يفضل شراؤه جديداً.**
+
+        12. **قاعدة البحث في حراج (خاص بزر حراج فقط):**
+            * هذه القاعدة تطبق فقط عندما يطلب المستخدم "روابط حراج".
+            * صيغة الرابط هي: https://haraj.com.sa/search/اسم-القطعة-هنا
+            (استبدل المسافات بـ %20)
+
+        13. **قاعدة البث المباشر (Streaming):**
+            * إذا ذكر المستخدم "بث" أو "streaming": تجنب معالج R5 7600.
+            * البديل الأفضل: R7 7700 (بسبب عدد المسارات الأكبر).
+        `;
+
+        /**
+         * دالة لاستدعاء Gemini API مع محاولات إعادة عند الفشل
+         */
+        async function generateContent(userPrompt, systemInstruction = null, tools = null, retries = 3, delay = 1000) {
+            const payload = {
+                contents: [{ parts: [{ text: userPrompt }] }],
+            };
+
+            // إضافة تعليمات النظام إذا كانت موجودة
+            if (systemInstruction) {
+                payload.systemInstruction = {
+                    parts: [{ text: systemInstruction }]
+                };
+            }
+
+            // إضافة الأدوات (مثل Google Search) إذا كانت موجودة
+            if (tools) {
+                payload.tools = tools;
+            }
+
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        return result.candidates[0].content.parts[0].text;
+                    } else {
+                        throw new Error("Invalid response structure from API.");
+                    }
+
+                } catch (error) {
+                    if (i === retries - 1) { // آخر محاولة
+                        return null; // فشل في جلب البيانات
+                    }
+                    await new Promise(resolve => setTimeout(resolve, delay * Math.pow(2, i))); // Exponential backoff
+                }
+            }
+            return null; // فشل بعد كل المحاولات
+        }
+
+        /**
+         * معالج النقر على أزرار "ملخص بالذكاء الاصطناعي"
+         */
+        document.querySelectorAll('.generate-summary-btn').forEach(button => {
+            button.addEventListener('click', async (e) => {
+                const card = e.target.closest('div');
+                const componentName = card.querySelector('h3').textContent.split('.').pop().trim(); // يحصل على اسم القطعة
+                const outputDiv = card.querySelector('.summary-output');
+                const originalButtonText = e.target.textContent;
+
+                // إظهار التحميل وإلغاء تفعيل الزر
+                e.target.disabled = true;
+                e.target.textContent = '...جاري التحميل';
+                outputDiv.style.display = 'block';
+                outputDiv.innerHTML = '<div class="loader" style="width: 20px; height: 20px; margin: 10px 0;"></div>';
+
+                const prompt = `يرجى تقديم ملخص فني موجز (فقرة واحدة) عن ${componentName}. ركز على المواصفات الرئيسية والجمهور المستهدف. يجب أن تكون الإجابة باللغة العربية.`;
+                
+                const summary = await generateContent(prompt, null); // نمرر null لتعليمات النظام
+
+                if (summary) {
+                    outputDiv.innerHTML = summary;
+                } else {
+                    outputDiv.innerHTML = '<p class="text-red-400">حدث خطأ أثناء جلب الملخص. يرجى المحاولة مرة أخرى.</p>';
+                }
+
+                // إعادة الزر لوضعه الطبيعي
+                e.target.disabled = false;
+                e.target.textContent = originalButtonText;
+            });
+        });
+
+        /**
+         * معالج إرسال نموذج "مولد التجميعات"
+         */
+        const buildForm = document.getElementById('build-form');
+        const buildOutput = document.getElementById('build-output');
+        const buildSubmitBtn = document.getElementById('build-submit-btn');
+        // متغيرات زر حراج
+        const harajSection = document.getElementById('haraj-section');
+        const harajPriceBtn = document.getElementById('haraj-price-btn');
+        const harajOutput = document.getElementById('haraj-output');
+
+        if (buildForm) {
+            buildForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const budget = document.getElementById('budget-input').value;
+                const usage = document.getElementById('usage-input').value;
+                const originalButtonText = buildSubmitBtn.textContent;
+
+                // إظهار التحميل وإلغاء تفعيل الزر
+                buildSubmitBtn.disabled = true;
+                buildSubmitBtn.textContent = '...جاري إنشاء التجميعة';
+                buildOutput.style.display = 'block';
+                buildOutput.innerHTML = '<div class="loader"></div>';
+                
+                // إخفاء زر حراج عند إنشاء تجميعة جديدة
+                harajSection.style.display = 'none';
+                harajOutput.style.display = 'none';
+                harajOutput.innerHTML = '';
+
+                // تحديث الـ Prompt ليصبح مزيجاً
+
+                // 1. تحديث "عقل" محمد بأحدث قائمة توصيات من الصفحة
+                const recommendations = Array.from(document.querySelectorAll('section h3')).map(h => h.textContent.split('.').pop().trim()).join(', ');
+                const dynamicBrain = MOHAMMEDS_BRAIN.replace('${Array.from(document.querySelectorAll(\'section h3\')).map(h => h.textContent.split(\'.\').pop().trim()).join(\', \')}', recommendations);
+
+                // 2. إنشاء الـ Prompt الخاص بالمستخدم
+                const userQuery = `
+                    قام المستخدم بطلب تجميعة كمبيوتر.
+                    الميزانية: ${budget}
+                    الاستخدام الأساسي: ${usage}
+
+                    مهمتك هي اقتراح قائمة تجميعة كمبيوتر كاملة (المعالج، كرت الشاشة، اللوحة الأم، الرامات، مزود الطاقة، التخزين، الكيس).
+                    يجب أن تتبع "قواعد وخبرة محمد الضاني" الموجودة في تعليمات النظام (System Instruction) بشكل صارم.
+                    
+                    ***مهم جداً (الأسعار):***
+                    * اذكر السعر التقديري لكل قطعة (جديد من أمازون/علي إكسبريس).
+                    * **لا تضع أي روابط انترنت.** (المستخدم يريد قائمة نظيفة بدون روابط).
+                    
+                    ***مهم جداً (الإجمالي):***
+                    بعد الانتهاء من القائمة، قم بجمع الأسعار التقريبية للقطع واعرض **السعر الإجمالي** في سطر منفصل.
+                    
+                    يجب أن تكون الإجابة باللغة العربية.
+
+                    ***تنسيق الإجابة (مهم جداً):***
+                    - ابدأ بـ <h3>هذه تجميعة مقترحة (بخبرة محمد والذكاء الاصطناعي):</h3>
+                    - قم بتنسيق قائمة القطع باستخدام HTML. استخدم <ul class="list-disc list-inside mt-4 space-y-2 text-left"> للقائمة الرئيسية و <li> لكل قطعة.
+                    - **لا تستخدم أبداً أي نجوم (**) أو Markdown.**
+                    - مثال للتنسيق:
+                    <h3>هذه تجميعة مقترحة (بخبرة محمد والذكاء الاصطناعي):</h3>
+                    <ul class="list-disc list-inside mt-4 space-y-2 text-left">
+                        <li><strong>المعالج:</strong> اسم المعالج (السعر التقريبي جديد) - ملاحظة قصيرة</li>
+                        <li><strong>كرت الشاشة:</strong> اسم الكرت (السعر التقريبي جديد) - ملاحظة قصيرة</li>
+                        <li><strong>اللوحة الأم:</strong> اسم اللوحة (السعر)</li>
+                        <li><strong>الرامات:</strong> اسم الرامات (السعر)</li>
+                        <li><strong>التخزين:</strong> اسم وحدة التخزين (السعر)</li>
+                        <li><strong>مزود الطاقة:</strong> اسم المزود (السعر)</li>
+                        <li><strong>الكيس:</strong> اسم الكيس (السعر)</li>
+                    </ul>
+                    <!-- مثال على السعر الإجمالي -->
+                    <h4 class="text-xl font-bold mt-6 text-blue-300 border-t border-slate-600 pt-4">
+                        💰 الإجمالي التقريبي (قطع جديدة): 0000 ريال
+                    </h4>
+                `;
+
+                // 3. استدعاء Gemini
+                const buildList = await generateContent(userQuery, dynamicBrain);
+
+                if (buildList) {
+                    // تنظيف الإجابة من أي نجوم متبقية وعرضها كـ HTML
+                    const cleanBuildList = buildList.replace(/\*\*/g, ''); // إزالة أي نجوم (**)
+                    buildOutput.innerHTML = cleanBuildList;
+                    // إظهار زر حراج وتخزين نص التجميعة
+                    buildOutput.dataset.buildText = buildList; // تخزين النص النظيف لاستخدامه لاحقاً
+                    harajSection.style.display = 'block'; // إظهار قسم زر حراج
+                } else {
+                    buildOutput.innerHTML = '<p class="text-red-400">حدث خطأ أثناء إنشاء التجميعة. يرجى المحاولة مرة أخرى.</p>';
+                }
+
+                // إعادة الزر لوضعه الطبيعي
+                buildSubmitBtn.disabled = false;
+                buildSubmitBtn.textContent = originalButtonText;
+            });
+        }
+
+        // معالج النقر على زر سعر حراج
+        if (harajPriceBtn) {
+            harajPriceBtn.addEventListener('click', async () => {
+                const buildText = buildOutput.dataset.buildText; // جلب نص التجميعة المخزن
+                if (!buildText) return; // التأكد من وجود نص
+
+                const originalButtonText = harajPriceBtn.textContent;
+
+                // إظهار التحميل وإلغاء تفعيل الزر
+                harajPriceBtn.disabled = true;
+                harajPriceBtn.textContent = '...جاري البحث في حراج';
+                harajOutput.style.display = 'block';
+                harajOutput.innerHTML = '<div class="loader" style="width: 20px; height: 20px; margin: 10px auto;"></div>';
+
+                // 1. تحديث "عقل" محمد
+                const recommendations = Array.from(document.querySelectorAll('section h3')).map(h => h.textContent.split('.').pop().trim()).join(', ');
+                const dynamicBrain = MOHAMMEDS_BRAIN.replace('${Array.from(document.querySelectorAll(\'section h3\')).map(h => h.textContent.split(\'.\').pop().trim()).join(\', \')}', recommendations);
+
+                // 2. إنشاء الـ Prompt الخاص بسعر حراج وروابطه
+                const harajQuery = `
+                    هذه قائمة تجميعة كمبيوتر (التي اقترحتها سابقاً):
+                    ${buildText}
+
+                    مهمتك هي:
+                    1.  حساب السعر الإجمالي التقريبي لهذه القطع **في سوق المستعمل** (بناءً على قواعد أسعار حراج في تعليمات النظام).
+                    2.  كتابة فقرة قصيرة جداً عن السعر المستعمل.
+                    3.  **الأهم:** إعادة كتابة قائمة القطع، ولكن هذه المرة أضف رابط بحث في حراج بجانب كل قطعة.
+                    
+                    التنسيق المطلوب (HTML):
+                    <p class="text-lg text-yellow-400 mb-4 font-bold">السعر التقديري في حراج: [السعر] ريال</p>
+                    <ul class="list-disc list-inside space-y-2 text-right">
+                        <li>اسم القطعة <a href="https://haraj.com.sa/search/اسم-القطعة" target="_blank" class="text-yellow-400 hover:text-yellow-300 text-sm font-bold">[ابحث في حراج]</a></li>
+                        <!-- كرر لباقي القطع -->
+                    </ul>
+                    
+                    لا تستخدم Markdown أو نجوم.
+                `;
+
+                // 3. استدعاء Gemini
+                const harajPriceSummary = await generateContent(harajQuery, dynamicBrain);
+
+                if (harajPriceSummary) {
+                    harajOutput.innerHTML = harajPriceSummary;
+                } else {
+                    harajOutput.innerHTML = '<p class="text-red-400">حدث خطأ أثناء حساب السعر. يرجى المحاولة مرة أخرى.</p>';
+                }
+
+                // إعادة الزر لوضعه الطبيعي
+                harajPriceBtn.disabled = false;
+                harajPriceBtn.textContent = originalButtonText;
+            });
+        }
+    </script>
+</body>
+</html>
