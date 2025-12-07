@@ -1,0 +1,404 @@
+﻿body {
+    font-family: 'Cairo', sans-serif;
+    background-color: #1a1a2e;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    /* إضافة مسافة سفلية لكي لا يغطي الفوتر الثابت على المحتوى */
+    padding-bottom: 80px; 
+}
+
+@keyframes subtleGlow {
+    0% { text-shadow: 0 0 10px #FFD700, 0 0 20px #000; }
+    50% { text-shadow: 0 0 15px #FFD700, 0 0 25px #FFD700, 0 0 20px #000; }
+    100% { text-shadow: 0 0 10px #FFD700, 0 0 20px #000; }
+}
+
+h1 {
+    color: #FFD700;
+    font-size: 3em;
+    text-shadow: 0 0 10px #FFD700, 0 0 20px #000;
+    animation: subtleGlow 3s infinite;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* --- شاشة الإعدادات --- */
+#setup-screen {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #FFD700;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    max-width: 500px;
+    margin: 40px auto;
+}
+
+#setup-screen div {
+    margin-bottom: 15px;
+}
+
+#setup-screen label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #FFD700;
+}
+
+#setup-screen input {
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.9);
+    color: #333;
+}
+
+#start-game-btn {
+    background-color: #FFD700;
+    color: #1a1a2e;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#start-game-btn:hover {
+    background-color: #fff;
+    box-shadow: 0 0 15px #FFD700;
+}
+
+/* --- شاشة اختيار المواضيع --- */
+#category-selection-screen {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #FFD700;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+#selection-indicator {
+    color: #FFD700;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+#category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.category-choice {
+    background-color: #1f1f3d;
+    color: #fff;
+    padding: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid #9D4EDD;
+    transition: all 0.3s;
+}
+
+.category-choice:hover {
+    background-color: #9D4EDD;
+    color: #1f1f3d;
+    transform: scale(1.05);
+}
+
+.category-choice.picked { 
+    background-color: #333;
+    color: #666;
+    border-color: #555;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* --- لوحة النتائج --- */
+#scoreboard {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.score-box {
+    font-size: 1.5em;
+    padding: 15px 30px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 2px solid transparent;
+    transition: all 0.3s;
+    min-width: 200px;
+}
+
+.score-box.active-turn {
+    border-color: #FFD700;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #FFD700;
+}
+
+/* --- لوحة اللعب (الأسئلة) --- */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); 
+    gap: 10px;
+    max-width: 1400px;
+    margin: 20px auto;
+}
+
+.category-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.category-header {
+    background-color: #FFD700;
+    color: #1a1a2e;
+    padding: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #FFD700;
+}
+
+.question-cell {
+    background-color: rgba(0, 50, 100, 0.7);
+    color: #FFD700;
+    padding: 20px;
+    font-size: 1.8em;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid #00aaff;
+    box-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
+    transition: all 0.3s;
+    text-shadow: 0 0 5px #000;
+}
+
+.question-cell:hover {
+    background-color: rgba(0, 80, 150, 0.9);
+    box-shadow: 0 0 20px #00aaff;
+    transform: scale(1.03);
+}
+
+.question-cell.answered {
+    background-color: rgba(40, 40, 40, 0.8);
+    color: #666;
+    cursor: not-allowed;
+    text-decoration: none;
+    box-shadow: none;
+    border-color: #444;
+}
+
+/* --- النافذة المنبثقة (Modal) --- */
+.modal {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* خلفية المودال الزرقاء */
+.modal-content {
+    background-color: #004e92; /* أزرق ملكي */
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 0 20px #FFD700;
+    border: 2px solid #FFD700;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#question-text {
+    font-size: 2em;
+    margin-bottom: 20px;
+    min-height: 100px;
+    color: #fff;
+    transition: all 0.3s ease;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    border: none;
+}
+
+/* تظليل إضافي عند التأكيد */
+#question-text.question-text-highlight {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #FFD700;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #FFD700;
+}
+
+#answer-text {
+    font-size: 1.4em;
+    color: #76ff03; /* أخضر فاتح */
+    font-weight: bold;
+    margin-top: 15px;
+    text-shadow: 0 0 5px #000;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+#timer {
+    font-size: 3em;
+    color: #ff4081; /* وردي فاقع */
+    font-weight: bold;
+    margin-bottom: 20px;
+    animation: pulse 1s infinite;
+}
+
+.modal-buttons {
+    width: 100%;
+}
+
+.modal-buttons button {
+    padding: 10px 20px;
+    font-size: 1em;
+    font-family: 'Cairo', sans-serif;
+    font-weight: bold;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    transition: all 0.3s;
+}
+
+/* زر التأكيد الأصفر */
+#confirm-btn { 
+    background-color: #ffc107; /* أصفر */
+    color: #000000; /* نص أسود */
+    border: 2px solid #e0a800;
+}
+
+#confirm-btn:hover { 
+    background-color: #ffdb4d; 
+    transform: scale(1.05);
+}
+
+#show-answer-btn { background-color: #007bff; }
+#show-answer-btn:hover { background-color: #0056b3; }
+
+/* مناطق التحكيم */
+#active-judge-area, #steal-judge-area {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #FFD700;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 90%;
+}
+
+#active-judge-area p, #steal-judge-area p {
+    font-size: 1.3em;
+    color: #FFD700;
+    margin-bottom: 10px;
+}
+
+#active-correct-btn, #active-wrong-btn,
+#steal-correct-btn, #steal-wrong-btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#active-correct-btn:hover, #steal-correct-btn:hover { background-color: #218838; }
+#active-wrong-btn:hover, #steal-wrong-btn:hover { background-color: #c82333; }
+
+#start-game-btn:active,
+.modal-buttons button:active,
+.category-choice:active {
+    transform: scale(0.97);
+    opacity: 0.8;
+}
+
+/* تنسيق نافذة الرهان */
+#bet-confirm-text {
+    font-size: 1.5em;
+    color: #FFD700;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+#bet-modal .modal-buttons button {
+    background-color: #9D4EDD;
+}
+#bet-modal .modal-buttons button:hover {
+    background-color: #c082ff;
+}
+#bet-modal .modal-buttons button#bet-confirm-no {
+    background-color: #6c757d;
+}
+#bet-modal .modal-buttons button#bet-confirm-no:hover {
+    background-color: #8a939b;
+}
+
+/* --- تنسيق حقوق المطور (الفوتر الثابت - نسخة أنحف) --- */
+.game-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* خلفية داكنة */
+    padding: 5px 0; /* ✅ تم تقليل المسافة لجعل الشريط أنحف */
+    text-align: center;
+    font-size: 0.8em; /* ✅ تم تصغير الخط قليلاً ليتناسب مع الشريط النحيف */
+    color: #aaa;
+    border-top: 1px solid rgba(255, 215, 0, 0.5);
+    z-index: 999;
+}
+
+.game-footer a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.game-footer a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #FFD700;
+}

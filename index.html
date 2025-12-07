@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عالم الحنكة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>عالم الحنكة</h1>
+
+    <div id="setup-screen">
+        <h2>إعدادات اللعبة</h2>
+        <div>
+            <label for="team1-name">اسم الفريق الأول:</label>
+            <input type="text" id="team1-name" value="الفريق الأحمر">
+        </div>
+        <div>
+            <label for="team2-name">اسم الفريق الثاني:</label>
+            <input type="text" id="team2-name" value="الفريق الأزرق">
+        </div>
+        <button id="start-game-btn">اختيار المواضيع</button>
+    </div>
+
+    <div id="category-selection-screen" class="hidden">
+        <h2 id="selection-indicator"></h2>
+        <div id="category-grid"></div>
+    </div>
+
+    <div id="game-screen" class="hidden">
+        <div id="scoreboard">
+            <div id="team1-score" class="score-box active-turn">
+                <span id="team1-display-name">الفريق الأحمر</span>: 0
+            </div>
+            <div id="team2-score" class="score-box">
+                <span id="team2-display-name">الفريق الأزرق</span>: 0
+            </div>
+        </div>
+        <h3 id="turn-indicator"></h3>
+        <div id="game-board"></div>
+    </div>
+
+    <div id="question-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="question-text">نص السؤال هنا...</h2>
+            <p id="answer-text" class="hidden">الإجابة الصحيحة هي...</p>
+            <div id="timer">20</div>
+            
+            <div class="modal-buttons">
+                <button id="confirm-btn">تأكيد إجابة الفريق</button>
+
+                <button id="show-answer-btn" class="hidden">إظهار الإجابة</button>
+                
+                <div id="active-judge-area" class="hidden">
+                    <p id="active-judge-text">هل إجابة الفريق الأساسي صحيحة؟</p>
+                    <button id="active-correct-btn" style="background-color: #28a745;">نعم (صحيحة)</button>
+                    <button id="active-wrong-btn" style="background-color: #dc3545;">لا (خاطئة)</button>
+                </div>
+
+                <div id="steal-judge-area" class="hidden">
+                    <p id="steal-judge-text">هل إجابة الفريق السارق صحيحة؟</p>
+                    <button id="steal-correct-btn" style="background-color: #28a745;">نعم (سرقة ناجحة)</button>
+                    <button id="steal-wrong-btn" style="background-color: #dc3545;">لا (سرقة فاشلة)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="bet-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="bet-confirm-text"></h2>
+            <p>عند الفوز، ستتضاعف نقاطك. عند الخسارة، ستخسر كل شيء!</p>
+            <div class="modal-buttons">
+                <button id="bet-confirm-yes">نعم، تفعيل الرهان!</button>
+                <button id="bet-confirm-no">لا، سؤال عادي</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="game-footer">
+        <p>تم التطوير بواسطة: <a href="https://remarkable-duckanoo-a0950f.netlify.app/" target="_blank">محمد الضاني</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
